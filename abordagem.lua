@@ -1,3 +1,8 @@
+-- loskatchorros
+-- https://www.loskatchorros.com.br/
+-- server4.loskatchorros.com.br:7777
+--QUACK QUACK
+
 script_name("Auto Abordagem")
 
 local cooldown = 5000
@@ -46,4 +51,5 @@ function main()
             end
         end
     end
+
 end
