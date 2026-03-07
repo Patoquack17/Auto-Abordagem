@@ -46,6 +46,8 @@ Sistema de controle de IDs já abordados
 
 Compatível com MoonLoader + SAMP.Events
 
+
+
 Baixo impacto de performance
 
 📦 Requisitos
@@ -53,6 +55,9 @@ Baixo impacto de performance
 GTA SA
 
 SA-MP
+
+SAMP.Events:
+https://github.com/THE-FYP/SAMP.Lua?tab=readme-ov-file
 
 MoonLoader
 
