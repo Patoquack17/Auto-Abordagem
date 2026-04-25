@@ -2,7 +2,7 @@ https://www.loskatchorros.com.br/
 
 # AUTO-PM PACOTE COMPLETO
 
-#AUTO VIDA - COLETE
+#AUTO VIDA - COLETE (Qnd a vida ou colete chegar a nível 40 é disparado o comando  /usarkit /colete. Sempre andar com kit médico e colete é necessario ser vip!
 
 #AUTO POLICIA
 
