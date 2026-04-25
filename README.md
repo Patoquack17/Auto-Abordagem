@@ -3,6 +3,9 @@ https://www.loskatchorros.com.br/
 # Auto-Abordagem
 Auto Abordagem CVR
 
+!!!!!!
+police_helperv2.lua
+A Ultima atualização, integrado o sistema de Blaclist. N aborda o id que vc adicionar no /bladd evitando ta disparando comandos em player indesejado (amigo, outro policial na msm viatura)....
 
 Auto Abordagem (MoonLoader / SA-MP)
 
