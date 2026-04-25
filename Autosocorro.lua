@@ -1,43 +1,39 @@
 script_name("AutoAssist")
 script_author("Quack")
-
 require "lib.moonloader"
+
+-- Configurações
+local HP_THRESHOLD    = 40
+local ARMOR_THRESHOLD = 40
+local KIT_COOLDOWN    = 10
+local ARMOR_COOLDOWN  = 10
 
 function main()
     while not isSampAvailable() do wait(100) end
+    sampAddChatMessage("[AutoAssist] Script Auto-Socorro ativo.", 0x00FF00)
 
-    sampAddChatMessage("[AutoAssist] Script Auto-Socorro.", -1)
-
-    local lastKit = 0
+    local lastKit   = 0
     local lastArmor = 0
-    local lastRepair = 0
 
     while true do
         wait(500)
 
-        local hp = getCharHealth(PLAYER_PED)
-        local armor = getCharArmour(PLAYER_PED)
+        if not isCharDead(PLAYER_PED) then
+            local hp    = getCharHealth(PLAYER_PED)
+            local armor = getCharArmour(PLAYER_PED)
 
-        -- HP baixo
-        if hp <= 40 and os.clock() - lastKit > 10 then
-            sampSendChat("/usarkit")
-            lastKit = os.clock()
-        end
+            -- HP baixo
+            if hp <= HP_THRESHOLD and os.clock() - lastKit > KIT_COOLDOWN then
+                sampSendChat("/usarkit")
+                lastKit = os.clock()
+                sampAddChatMessage("[AutoAssist] Kit usado! HP: " .. math.floor(hp), 0xFF4444)
+            end
 
-        -- Colete baixo (somente se estiver usando)
-        if armor > 0 and armor <= 40 and os.clock() - lastArmor > 10 then
-            sampSendChat("/colete")
-            lastArmor = os.clock()
-        end
-
-        -- Carro
-        if isCharInAnyCar(PLAYER_PED) then
-            local car = storeCarCharIsInNoSave(PLAYER_PED)
-            local carhp = getCarHealth(car)
-
-            if carhp <= 500 and os.clock() - lastRepair > 15 then
-                sampSendChat("/reparar")
-                lastRepair = os.clock()
+            -- Colete baixo (somente se estiver usando)
+            if armor > 0 and armor <= ARMOR_THRESHOLD and os.clock() - lastArmor > ARMOR_COOLDOWN then
+                sampSendChat("/colete")
+                lastArmor = os.clock()
+                sampAddChatMessage("[AutoAssist] Colete recarregado! Armor: " .. math.floor(armor), 0x4444FF)
             end
         end
     end
