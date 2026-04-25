@@ -7,6 +7,16 @@ Auto Abordagem CVR
 police_helperv2.lua
 A Ultima atualização, integrado o sistema de Blaclist. N aborda o id que vc adicionar no /bladd evitando ta disparando comandos em player indesejado (amigo, outro policial na msm viatura)....
 
+## CASO QUEIRA ADICIONAR MAIS COMANDOS, É SÓ REPETIR O CÓDIGO E MUDAR O /COMANDO EX: /VENDERVACINA /ASSALTAR.......
+local actions = {
+    { key = 0x31, cmd = '/abordagem',    msg = 'Abordando',          checkAbordado = true  },
+    { key = 0x32, cmd = '/algemar',      msg = 'Algemando',          checkAbordado = false },
+    { key = 0x33, cmd = '/prender',      msg = 'Prendendo',          checkAbordado = false },
+    { key = 0x34, cmd = '/prenderArmas', msg = 'Prendendo armas de', checkAbordado = false },
+    { key = 0x35, cmd = '/revistarcarga',msg = 'Revistando carga de',checkAbordado = false },
+    { key = 0x36, cmd = '/prendercarga', msg = 'Prendendo carga de', checkAbordado = false },
+}
+
 Auto Abordagem (MoonLoader / SA-MP)
 
 Script para MoonLoader que automatiza o comando /abordagem em jogadores próximos.
